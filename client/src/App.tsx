@@ -1,8 +1,10 @@
 import React from "react";
 import "./App.css";
+import { GlobalStyle, Wrapper } from "./styles/GlobalStyle";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignUp from "./pages/auth/SignUp";
 import SignIn from "./pages/auth/SignIn";
+import Layout from "./components/Layout";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +23,13 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
+    <>
+      <GlobalStyle />
+      <Wrapper>
+        <Layout>
+          <RouterProvider router={router} />
+        </Layout>
+      </Wrapper>
+    </>
   );
 }
