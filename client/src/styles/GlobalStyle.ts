@@ -18,8 +18,8 @@ export const GlobalStyle = createGlobalStyle`
 export const Wrapper = styled.div`
   max-width: 1200px;
   text-align: center;
-  align-items: center;
   margin: 0 auto;
+  margin-top: 50px;
 `;
 
 /* Navbar style */
