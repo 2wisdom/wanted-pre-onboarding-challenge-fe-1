@@ -5,18 +5,12 @@ import * as yup from "yup";
 import { Wrapper } from "../../styles/AuthStyle";
 
 interface FormInput {
-  name: string;
   email: string;
   password: string;
   confirmPassword: string;
 }
 
 const SignupSchema = yup.object().shape({
-  name: yup
-    .string()
-    .required("이름을 입력해 주세요.")
-    .min(2, "이름은 2글자 이상 12글자 이하입니다.")
-    .max(12, "이름은 2글자 이상 12글자 이하입니다."),
   email: yup
     .string()
     .email("이메일 형식이 아닙니다.")
@@ -49,13 +43,6 @@ export default function SignUp() {
       <h1>회원가입</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/* name */}
-        <div>
-          <label>Name</label>
-          <input type="text" {...register("name")} />
-        </div>
-        {errors.name && <p>{errors.name.message}</p>}
-
         {/* email */}
         <div>
           <label>Email</label>
