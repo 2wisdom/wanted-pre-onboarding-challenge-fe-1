@@ -5,10 +5,10 @@ import * as yup from "yup";
 import { Wrapper } from "../../styles/AuthStyle";
 
 interface FormInput {
-  name: String;
-  email: String;
-  password: String;
-  confirmPassword: String;
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 }
 
 const SignupSchema = yup.object().shape({
