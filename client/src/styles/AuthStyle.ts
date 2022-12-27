@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 
   /* text style */
   h1 {
-    margin: 0 0 50px 0;
+    margin: 0 0 20px 0;
   }
 
   /* input box style */
