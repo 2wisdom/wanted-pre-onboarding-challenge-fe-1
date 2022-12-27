@@ -19,6 +19,12 @@ export const Wrapper = styled.div`
     margin: 0 0 20px 0;
   }
 
+  p {
+    color: #f13a37;
+    text-align: right;
+    min-width: 100px;
+  }
+
   /* input box style */
   input {
     padding: 1px 5px 1px 5px;
@@ -31,6 +37,7 @@ export const Wrapper = styled.div`
     border: 1px solid #a5a1a4;
     border-radius: 3px;
     padding: 4px;
+    margin: 25px 0 0 0;
     min-width: 80px;
   }
 
