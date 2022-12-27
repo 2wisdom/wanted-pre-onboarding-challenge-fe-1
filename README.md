@@ -17,4 +17,4 @@
 
 개발모드 : `yarn dev`
 <br />
-FE 서버 : `http://localhost:5173/`
+FE 서버 : `localhost:5173`
