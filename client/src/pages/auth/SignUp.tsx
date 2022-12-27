@@ -4,12 +4,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Wrapper } from "../../styles/AuthStyle";
 
+/* type */
 interface FormInput {
   email: string;
   password: string;
   confirmPassword: string;
 }
 
+/* Yup Vaildation */
 const SignupSchema = yup.object().shape({
   email: yup
     .string()
@@ -29,6 +31,7 @@ const SignupSchema = yup.object().shape({
 });
 
 export default function SignUp() {
+  /* Submit */
   const {
     register,
     handleSubmit,
