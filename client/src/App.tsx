@@ -25,11 +25,11 @@ export default function App() {
   return (
     <>
       <GlobalStyle />
-      <Wrapper>
-        <Layout>
+      <Layout>
+        <Wrapper>
           <RouterProvider router={router} />
-        </Layout>
-      </Wrapper>
+        </Wrapper>
+      </Layout>
     </>
   );
 }
