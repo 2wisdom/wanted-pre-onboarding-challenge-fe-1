@@ -2,7 +2,10 @@
 
 **원티드 프리온보딩 챌린지 프론트엔드코스 사전과제**
 <br />
+
 [API GitHub Link !](https://github.com/2wisdom/-wanted-pre-onboarding-challenge-fe-1-api)
+
+[Memo Notion Link !](https://tulip-army-069.notion.site/baaed3669cf143699457f9f2a2f8fed8)
 
 <!-- Skills -->
 <p>
