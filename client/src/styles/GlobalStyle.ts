@@ -12,6 +12,27 @@ export const GlobalStyle = createGlobalStyle`
    #root{
        margin:0 auto;
    }
+
+   /* global button style */
+   button {
+    text-align: center;
+    cursor: pointer;
+    background-color: #ededed;
+    border: 1px solid #a5a1a4;
+    border-radius: 3px;
+    padding: 4px;
+    min-width: 80px;
+  }
+
+  button:hover {
+    background-color: #a5a1a4;
+  }
+
+  button:active {
+    background-color: #a5a1a4;
+    box-shadow: 0 3px #565656;
+    transform: translateY(1px);
+  }
 `;
 
 /* Wrapper style */
