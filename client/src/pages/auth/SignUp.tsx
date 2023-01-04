@@ -6,6 +6,7 @@ import { Wrapper } from "../../styles/AuthStyle";
 
 /* type */
 interface FormInput {
+  name: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -13,6 +14,11 @@ interface FormInput {
 
 /* Yup Vaildation */
 const SignupSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required("닉네임을 입력해주세요.")
+    .min(2, "이름은 2글자 이상, 8글자 이하입니다.")
+    .max(8, "이름은 2글자 이상, 8글자 이하입니다."),
   email: yup
     .string()
     .email("이메일 형식이 아닙니다.")
@@ -46,31 +52,45 @@ export default function SignUp() {
       <h1>회원가입</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
+        {/* name */}
+        <div>
+          <label>
+            Name
+            <input type="text" {...register("name")} />
+          </label>
+        </div>
+        <p>{errors.name?.message || "\u00A0"}</p>
+
         {/* email */}
         <div>
-          <label>Email</label>
-          <input type="email" {...register("email")} />
+          <label>
+            Email
+            <input type="email" {...register("email")} />
+          </label>
         </div>
-        {errors.email && <p>{errors.email.message}</p>}
+        <p>{errors.email?.message || "\u00A0"}</p>
 
         {/* password */}
         <div>
-          <label>Password</label>
-          <input type="password" {...register("password")} />
+          <label>
+            Password
+            <input type="password" {...register("password")} />
+          </label>
         </div>
-        {errors.password && <p>{errors.password.message}</p>}
+        <p>{errors.password?.message || "\u00A0"}</p>
 
         {/* confirm password */}
         <div>
-          <label>ConfirmPassword</label>
-          <input
-            type="password"
-            {...register("confirmPassword", { required: true })}
-          />
+          <label>
+            ConfirmPassword
+            <input
+              type="password"
+              {...register("confirmPassword", { required: true })}
+            />
+          </label>
         </div>
-        {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
+        <p>{errors.confirmPassword?.message || "\u00A0"}</p>
 
-        {/* submit button */}
         <button>완료 !</button>
       </form>
     </Wrapper>

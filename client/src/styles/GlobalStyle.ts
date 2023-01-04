@@ -33,6 +33,11 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 3px #565656;
     transform: translateY(1px);
   }
+
+  /* global input style */
+    input {
+    padding: 1px 5px 1px 5px;
+  }
 `;
 
 /* Wrapper style */

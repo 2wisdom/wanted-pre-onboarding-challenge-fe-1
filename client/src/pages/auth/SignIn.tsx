@@ -37,17 +37,21 @@ export default function SignIn() {
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* email */}
         <div>
-          <label>Email</label>
-          <input type="email" {...register("email")} />
+          <label>
+            Email
+            <input type="email" {...register("email")} />
+          </label>
         </div>
-        {errors.email && <p>{errors.email.message}</p>}
+        <p>{errors.email?.message || "\u00A0"}</p>
 
         {/* password */}
         <div>
-          <label>Password</label>
-          <input type="password" {...register("password")} />
+          <label>
+            Password
+            <input type="password" {...register("password")} />
+          </label>
         </div>
-        {errors.password && <p>{errors.password.message}</p>}
+        <p>{errors.password?.message || "\u00A0"}</p>
 
         {/* submit button */}
         <button>완료 !</button>

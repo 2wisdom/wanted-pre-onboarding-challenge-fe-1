@@ -6,11 +6,18 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   /* div in form style */
   form div {
     margin: 10px 0 10px 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  form div label {
     display: grid;
+    align-items: center;
     grid-template-columns: 180px 200px;
   }
 
@@ -20,6 +27,7 @@ export const Wrapper = styled.div`
   }
 
   p {
+    font-size: 12px;
     color: #f13a37;
     text-align: right;
     min-width: 100px;
@@ -27,27 +35,30 @@ export const Wrapper = styled.div`
 
   /* input box style */
   input {
-    padding: 1px 5px 1px 5px;
+    padding: 8px 5px 8px 5px;
+    border: 3px solid transparent;
+    border-bottom: 1px solid #000;
+  }
+
+  input:focus {
+    border: 2px solid #000;
+    border-radius: 5px;
   }
 
   /* button style */
   button {
-    cursor: pointer;
-    background-color: #ededed;
-    border: 1px solid #a5a1a4;
+    padding: 3px 10px 3px 10px;
+    margin-top: 50px;
+    background-color: #e8e9ec;
+    border: none;
     border-radius: 3px;
-    padding: 4px;
-    margin: 25px 0 0 0;
-    min-width: 80px;
   }
 
   button:hover {
-    background-color: #a5a1a4;
+    transition: all 0.5s;
+    background-color: #ababab;
   }
 
-  button:active {
-    background-color: #a5a1a4;
-    box-shadow: 0 5px #565656;
-    transform: translateY(3px);
+  input {
   }
 `;
