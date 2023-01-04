@@ -1,5 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
 import { Navigaiter } from "../styles/GlobalStyle";
 
 export default function Navbar() {
@@ -7,15 +12,11 @@ export default function Navbar() {
     <Navigaiter>
       <ul>
         <li>
-          {/* <Link to="signup"> */}
-          회원가입
-          {/* </Link> */}
+          <Link to="users/create">회원가입</Link>
         </li>
 
         <li>
-          {/* <Link to="signin"> */}
-          로그인
-          {/* </Link> */}
+          <Link to="users/login">로그인</Link>
         </li>
       </ul>
     </Navigaiter>
