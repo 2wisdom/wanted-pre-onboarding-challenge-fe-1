@@ -14,11 +14,6 @@ interface FormInput {
 
 /* Yup Vaildation */
 const SignupSchema = yup.object().shape({
-  name: yup
-    .string()
-    .required("닉네임을 입력해주세요.")
-    .min(2, "이름은 2글자 이상, 8글자 이하입니다.")
-    .max(8, "이름은 2글자 이상, 8글자 이하입니다."),
   email: yup
     .string()
     .email("이메일 형식이 아닙니다.")
@@ -52,15 +47,6 @@ export default function SignUp() {
       <h1>회원가입</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/* name */}
-        <div>
-          <label>
-            Name
-            <input type="text" {...register("name")} />
-          </label>
-        </div>
-        <p>{errors.name?.message || "\u00A0"}</p>
-
         {/* email */}
         <div>
           <label>
