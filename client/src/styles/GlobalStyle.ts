@@ -7,38 +7,13 @@ export const GlobalStyle = createGlobalStyle`
        padding: 0;
        outline:0;
        box-sizing:border-box;
-       font-family: 'Open Sans', sans-serif; 
+       font-family: 'Open Sans', sans-serif;
+       color: #373737;
    }
    #root{
-       margin:0 auto;
+       margin: 0 auto;
    }
-
-   /* global button style */
-   button {
-    text-align: center;
-    cursor: pointer;
-    background-color: #ededed;
-    border: 1px solid #a5a1a4;
-    border-radius: 3px;
-    padding: 4px;
-    min-width: 80px;
-  }
-
-  button:hover {
-    background-color: #a5a1a4;
-  }
-
-  button:active {
-    background-color: #a5a1a4;
-    box-shadow: 0 3px #565656;
-    transform: translateY(1px);
-  }
-
-  /* global input style */
-    input {
-    padding: 1px 5px 1px 5px;
-  }
-`;
+   `;
 
 /* Wrapper style */
 export const Wrapper = styled.div`
@@ -48,16 +23,18 @@ export const Wrapper = styled.div`
   margin-top: 50px;
 `;
 
-/* Navbar style */
+/* Navbar Style */
 export const Navigaiter = styled.div`
-  max-width: 1800px;
-  margin: 20px 50px 0 50px;
-  ul {
-    display: flex;
-    justify-content: right;
-  }
-  li {
-    list-style: none;
-    padding: 0 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  align-items: center;
+  max-width: 95%;
+  a {
+    text-decoration: none;
+    margin: 0 10px 0 10px;
   }
 `;

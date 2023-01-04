@@ -58,7 +58,4 @@ export const Wrapper = styled.div`
     transition: all 0.5s;
     background-color: #ababab;
   }
-
-  input {
-  }
 `;
