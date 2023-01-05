@@ -3,6 +3,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Wrapper } from "../../styles/AuthStyle";
+import * as Api from "../../Api";
+import { useNavigate } from "react-router-dom";
 
 /* type */
 interface FormInput {
@@ -20,6 +22,9 @@ const SignupSchema = yup.object().shape({
 });
 
 export default function SignIn() {
+  /* useNavigate */
+  const navigate = useNavigate();
+
   /* Submit */
   const {
     register,
@@ -28,7 +33,18 @@ export default function SignIn() {
   } = useForm<FormInput>({
     resolver: yupResolver(SignupSchema),
   });
-  const onSubmit: SubmitHandler<FormInput> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormInput> = async (data) => {
+    /* Api Connect */
+    try {
+      const res = await Api.post("users/login", data);
+      if (res.status === 200) {
+        alert("환영해요 !");
+        navigate("/todos");
+      }
+    } catch (err) {
+      alert("오류가 발생하였습니다. 다시 시도해주세요.");
+    }
+  };
 
   return (
     <Wrapper>
