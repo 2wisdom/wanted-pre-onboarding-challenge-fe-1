@@ -45,6 +45,7 @@ export default function SignUp() {
     resolver: yupResolver(SignupSchema),
   });
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
+    /* Api Connect */
     try {
       const res = await Api.post("users/create", data);
       // if (res.status === 409) {
