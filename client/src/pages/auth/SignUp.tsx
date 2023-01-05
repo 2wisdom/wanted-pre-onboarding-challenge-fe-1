@@ -3,10 +3,11 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Wrapper } from "../../styles/AuthStyle";
+import * as Api from "../../Api";
+import { useNavigate } from "react-router-dom";
 
 /* type */
 interface FormInput {
-  name: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -22,8 +23,8 @@ const SignupSchema = yup.object().shape({
     .string()
     .required("비밀번호를 입력해 주세요.")
     .matches(
-      /^[A-Za-z0-9]{6,12}$/,
-      "숫자와 문자 포함 6~12자리로 입력해 주세요."
+      /^[A-Za-z0-9]{8,12}$/,
+      "숫자와 문자 포함 8~12자리로 입력해 주세요."
     ),
   confirmPassword: yup
     .string()
@@ -32,6 +33,9 @@ const SignupSchema = yup.object().shape({
 });
 
 export default function SignUp() {
+  /* useNavigate */
+  const navigate = useNavigate();
+
   /* Submit */
   const {
     register,
@@ -40,7 +44,20 @@ export default function SignUp() {
   } = useForm<FormInput>({
     resolver: yupResolver(SignupSchema),
   });
-  const onSubmit: SubmitHandler<FormInput> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormInput> = async (data) => {
+    try {
+      const res = await Api.post("users/create", data);
+      // if (res.status === 409) {
+      //   alert("이미 존재하는 아이디입니다.");
+      // }
+      if (res.status === 200) {
+        alert("회원가입 완료 !");
+        navigate("/users/login");
+      }
+    } catch (err) {
+      alert("오류가 발생하였습니다. 다시 시도해주세요.");
+    }
+  };
 
   return (
     <Wrapper>
