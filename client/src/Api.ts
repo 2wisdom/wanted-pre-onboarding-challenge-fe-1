@@ -7,7 +7,7 @@ const serverUrl = "http://localhost:" + backendPortNumber + "/";
 interface methodParameter {
   endpoint: string;
   params?: string;
-  data: JSON;
+  data: any;
 }
 
 /* GET */
@@ -34,13 +34,13 @@ async function post(endpoint: string, data: any) {
   return axios.post(serverUrl + endpoint, bodyData, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
 }
 
 /* PUT */
-async function put(endpoint: string, data: JSON, isFile?: boolean) {
+async function put(endpoint: string, data: any, isFile?: boolean) {
   const bodyData = !isFile ? JSON.stringify(data) : data;
   console.log(`%cPUT 요청: ${serverUrl + endpoint}`, "color: #059c4b;");
   console.log(`%cPUT 요청 데이터: ${bodyData}`, "color: #059c4b;");
