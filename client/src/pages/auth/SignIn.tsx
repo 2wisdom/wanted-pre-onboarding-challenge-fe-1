@@ -38,6 +38,9 @@ export default function SignIn() {
     try {
       const res = await Api.post("users/login", data);
       if (res.status === 200) {
+        /* Token */
+        const token = res.data.token;
+        localStorage.setItem("Token", token);
         alert("환영해요 !");
         navigate("/todos");
       }
