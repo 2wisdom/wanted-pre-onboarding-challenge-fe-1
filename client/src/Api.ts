@@ -21,7 +21,7 @@ async function get(endpoint: string, params?: string) {
     {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        Authorization: `Bearer ${AUTH_TOKEN}`,
       },
     }
   );
@@ -51,7 +51,7 @@ async function put(endpoint: string, data: any, isFile?: boolean) {
   return axios.put(serverUrl + endpoint, bodyData, {
     headers: {
       "Content-Type": !isFile ? "application/json" : "multipart/form-data",
-      Authorization: `Bearer ${localStorage.getItem("Token")}`,
+      Authorization: `Bearer ${AUTH_TOKEN}`,
     },
   });
 }
@@ -65,7 +65,7 @@ async function del(endpoint: string, params?: string) {
     params ? serverUrl + endpoint + "/" + params : serverUrl + endpoint,
     {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        Authorization: `Bearer ${AUTH_TOKEN}`,
       },
     }
   );
