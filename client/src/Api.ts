@@ -4,6 +4,9 @@ const backendPortNumber = "8080";
 
 const serverUrl = "http://localhost:" + backendPortNumber + "/";
 
+const AUTH_TOKEN = localStorage.getItem("Token");
+axios.defaults.headers.common["Authorization"] = AUTH_TOKEN;
+
 interface methodParameter {
   endpoint: string;
   params?: string;
@@ -34,7 +37,7 @@ async function post(endpoint: string, data: any) {
   return axios.post(serverUrl + endpoint, bodyData, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("Token")}`,
+      Authorization: `Bearer ${AUTH_TOKEN}`,
     },
   });
 }
