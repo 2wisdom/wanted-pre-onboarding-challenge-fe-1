@@ -46,16 +46,16 @@ export default function SignUp() {
   });
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     /* Api Connect */
+    const res = await Api.post("users/create", data);
     try {
-      const res = await Api.post("users/create", data);
-      // if (res.status === 409) {
-      //   alert("이미 존재하는 아이디입니다.");
-      // }
       if (res.status === 200) {
         alert("회원가입 완료 !");
         navigate("/users/login");
       }
     } catch (err) {
+      // if (res.status === 409) {
+      //   alert("이미 존재하는 아이디입니다.");
+      // }
       alert("오류가 발생하였습니다. 다시 시도해주세요.");
     }
   };
