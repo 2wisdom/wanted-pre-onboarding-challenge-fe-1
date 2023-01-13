@@ -4,7 +4,7 @@ import { Navigaiter } from "../styles/GlobalStyle";
 
 export default function Navbar() {
   /* Login 상태 */
-  const onLogin = !!localStorage.getItem("Token");
+  const isLogin = !!localStorage.getItem("Token");
   /* useNavigate */
   const navigate = useNavigate();
 
@@ -19,12 +19,12 @@ export default function Navbar() {
     <Navigaiter>
       <div>
         <Link to="/">
-          <h1>Main</h1>
+          <h1>Daily Todo</h1>
         </Link>
       </div>
-      {onLogin ? (
+      {isLogin ? (
         <div>
-          <Link to="todos">MY Todo</Link>
+          <Link to="todos">할일</Link>
           <Link to="/" onClick={signOut}>
             로그아웃
           </Link>
