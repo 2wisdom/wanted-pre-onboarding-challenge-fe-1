@@ -23,6 +23,23 @@ export const Wrapper = styled.div`
     cursor: pointer;
   }
 
+  ol p {
+    text-align: left;
+  }
+
+  /* div in form style */
+  form div {
+    margin: 10px 0 10px 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  form div label {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 100px 200px;
+  }
+
   /* input box style */
   input {
     padding: 8px 5px 8px 5px;
@@ -35,10 +52,13 @@ export const Wrapper = styled.div`
     border-radius: 5px;
   }
 
+  form button {
+    margin: 50px 0 0 10px;
+  }
+
   /* button style */
   button {
     padding: 3px 10px 3px 10px;
-    margin: 50px 0 0 10px;
     background-color: #e8e9ec;
     border: none;
     border-radius: 3px;
